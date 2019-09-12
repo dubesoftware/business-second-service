@@ -5,4 +5,6 @@ In order to test the application, use the following URL with the default Flask d
 
 http://127.0.0.1:5000/business_seconds/<start_time>/<end_time>/
 
+Use the following command to run the Flask application: ```env FLASK_APP=test_app.py flask run```
+
 The test tool used is unittest.
