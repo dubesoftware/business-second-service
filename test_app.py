@@ -28,7 +28,7 @@ def get_business_seconds(start_time, end_time):
         
     # If any checks failed, return errors string: else, calculate and return business seconds.
     if checks.has_errors():
-        return checks.errors
+        return jsonify(checks.errors)
 
     else:
         # Still running after checks. Calculate and return business seconds.

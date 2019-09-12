@@ -5,7 +5,7 @@ class AssignmentChecks():
 
     def __init__(self, days):
         self.days = days
-        self.errors = ''
+        self.errors = []
 
     def check_za_holidays(self):
         """Checks that each date in a list of datetime objects is not a South African public holiday.
@@ -14,7 +14,7 @@ class AssignmentChecks():
         za_holidays = holidays.ZA()
         for day in self.days:
             if day.date() in za_holidays:
-                self.errors += " A date provided fell on a South African holiday."
+                self.errors.append("A date provided fell on a South African holiday.")
                 return True        
         return False
 
@@ -24,7 +24,7 @@ class AssignmentChecks():
         """
         for day in self.days:
             if day.isoweekday() not in range(0, 6):
-                self.errors += " A day value outside of a weekday was provided."
+                self.errors.append("A day value outside of a weekday was provided.")
                 return False        
         return True
 
@@ -35,11 +35,11 @@ class AssignmentChecks():
         """
         for day in self.days:
             if day.hour not in range(8, 18) and day.hour != 0:
-                self.errors += " An hour value outside of work hours was provided."
+                self.errors.append("An hour value outside of work hours was provided.")
                 return False        
         return True
 
     def has_errors(self):
-        if self.errors != '':
+        if len(self.errors) > 0:
             return True
         return False
