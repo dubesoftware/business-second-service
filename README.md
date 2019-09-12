@@ -1,5 +1,5 @@
 # business-secondr
-A minimal Flask application with an GET endpoint that calculates and returns business seconds between two valid ISO 8601 dates (or returns appropriate error information on failed requests). The application tests that the dates provided do not fall on a South Africa holiday, are weekdays and (when hours are provided) are work hours in the format ```yyyy-mm-ddThh:mm:ss.ffffff```.
+A minimal Flask application with an GET endpoint that calculates and returns business seconds between two valid ISO 8601 dates (or returns appropriate error information on failed requests). The application tests that the datetimes provided do not fall on a South Africa holiday, are weekdays and fall within work hours in the format ```yyyy-mm-ddThh:mm:ss.ffffff```.
 
 In order to test the application, use the following URL with the default Flask development server address and port:
 
